@@ -1,0 +1,24 @@
+{
+  "name": "basic-scraper",
+  "version": "1.0.0",
+  "description": "A simple scraper for fetching data from a website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pravendra93/basic-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pravendra93/basic-scraper/issues"
+  },
+  "homepage": "https://github.com/pravendra93/basic-scraper#readme",
+  "dependencies": {
+    "puppeteer": "^20.7.4"
+  }
+}
