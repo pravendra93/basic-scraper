@@ -27,10 +27,30 @@ const startApp = async () => {
     isMobile: false,
   });
 
-  await page.goto("https://www.imdb.com/", {
+  await page.goto("https://www.newageislam.com/", {
     waitUntil: "load",
     timeout: 0,
   });
+  await page.waitForSelector(".latestArticle", {
+    timeout: 0,
+  });
+
+  //read latest articles and fetch links
+  const articleLinks = await page.evaluate(() => {
+    const elements = [
+      ...document.querySelectorAll(".latestArticle .media-body a"),
+    ];
+    const data = [];
+    for (const elem of elements) {
+      data.push({
+        itemText: elem?.textContent,
+        itemLink: elem.href,
+      });
+    }
+    return data;
+  });
+
+  console.log("articleLinks => ", articleLinks);
   console.log("target link opened");
   console.log("start waiting....");
   await wait(10000);
