@@ -34,7 +34,7 @@ const startApp = async () => {
   await page.waitForSelector(".latestArticle", {
     timeout: 0,
   });
-
+  await wait(1000);
   //read latest articles and fetch links
   const articleLinks = await page.evaluate(() => {
     const elements = [
